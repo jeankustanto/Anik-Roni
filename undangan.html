@@ -1969,24 +1969,26 @@
   <script>
     // ==================== FIREBASE CONFIGURATION ====================
     console.log("Firebase script loaded.");
+    // GANTI SELURUH KONFIGURASI INI:
     const firebaseConfig = {
-      apiKey: "AIzaSyBg6EGMrQWLWX5HjlV9jAXU4-zhq4iltCo",
-      authDomain: "undangan-jeandwi.firebaseapp.com",
-      databaseURL: "https://undangan-jeandwi-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "undangan-jeandwi",
-      storageBucket: "undangan-jeandwi.firebasestorage.app",
-      messagingSenderId: "877292826662",
-      appId: "1:877292826662:web:903eff3cdd94c38cd736e7",
-      measurementId: "G-N49XBBL4P3"
+      apiKey: "AIzaSyCp7jmZrLCUDyOlJXvtV11PrOpuo6GT8Ks",
+      authDomain: "undangan-anik-roni-ucapan.firebaseapp.com",
+      databaseURL: "https://anikroni.netlify.app/undangan", // <-- GANTI INI!
+      projectId: "undangan-anik-roni-ucapan",
+      storageBucket: "undangan-anik-roni-ucapan.firebasestorage.app",
+      messagingSenderId: "720602166612",
+      appId: "1:720602166612:web:bd23149df00da673bd84c1"
     };
+    // ==================== AKHIR KONFIGURASI ====================
     
-    firebase.initializeApp(firebaseConfig);
-    console.log("Firebase initialized.");
+    firebase.initializeApp(firebaseConfig); // Koneksi ke database BARU
+    console.log("Firebase baru (undangan-anik-roni-ucapan) diinisialisasi.");
     
+    // Referensi database tetap sama, tetapi sekarang mengarah ke DB baru
     const database = firebase.database();
     const rsvpRef = database.ref('rsvp');
-    const wishesRef = database.ref('wishes');
-    console.log("Firebase references created.");
+    const wishesRef = database.ref('wishes'); // <-- Semua ucapan akan disimpan di DB baru
+    console.log("Referensi database baru dibuat.");
     
     // ==================== GLOBAL VARIABLES ====================
     const musicBtn = document.getElementById('musicBtn');
